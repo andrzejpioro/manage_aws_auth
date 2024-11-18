@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    {{ aws_auth_roles | to_json }}
+  mapUsers: |
+    {{ aws_auth_users | to_json }}

@@ -1,0 +1,16 @@
+aws_auth_roles:
+  - rolearn: "arn:aws:iam::123456789012:role/EKSNodeRole"
+    username: "system:node:{{EC2PrivateDNSName}}"
+    groups:
+      - "system:bootstrappers"
+      - "system:nodes"
+  - rolearn: "arn:aws:iam::123456789012:role/AdminRole"
+    username: "admin-user"
+    groups:
+      - "system:masters"
+
+aws_auth_users:
+  - userarn: "arn:aws:iam::123456789012:user/DevUser"
+    username: "dev-user"
+    groups:
+      - "system:masters"

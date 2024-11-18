@@ -1,0 +1,5 @@
+- name: Apply aws-auth ConfigMap
+  kubernetes.core.k8s:
+    state: present
+    namespace: kube-system
+    definition: "{{ lookup('template', 'aws-auth-configmap.yml.j2') }}"
