@@ -1,6 +1,6 @@
 aws_auth_roles:
   - rolearn: "arn:aws:iam::123456789012:role/EKSNodeRole"
-    username: "system:node:{{EC2PrivateDNSName}}"
+    username: "system:node:{{ '{{ EC2PrivateDNSName }}' }}"
     groups:
       - "system:bootstrappers"
       - "system:nodes"
